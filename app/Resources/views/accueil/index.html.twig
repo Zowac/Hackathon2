@@ -1,20 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <section id="accueil">
+        <div class="container-fluid">
 
-    <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img class="logo" src="{{ asset('images/AquaHippique.png') }}" alt="logo"/>
 
-        <div class="row">
-            <img src="" alt="Smiley face"
-            <h1 class="offset-4">AquaHippique</h1>
-            <p class="offset-3">Voici la plus grand compétition d'Aqua Poney du Bas-Rhin !</p>
+                        <h1 class="titrePrincipal">LA première compétition de courses d’aqua poney !</h1>
+                        <img class="horse" src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526571976/horse_xgaajl.png"
+                             alt="logo"/>
+                </div>
+            </div>
+
+
         </div>
+    </section>
 
-        <div class="row">
-            <p></p>
-        </div>
 
-    </div>
-
-    {% include 'footer.html.twig' %}
 {% endblock %}

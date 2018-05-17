@@ -1,3 +1,4 @@
+/* CSS général */
 h1 {
     font-family: 'Bowlby One SC', cursive;
 }
@@ -6,6 +7,44 @@ p {
     font-family: 'Open Sans', sans-serif;
 }
 
+
+
+/* Barre de navigation */
 .bg-dark {
     background-color: #5dc2da !important;
+}
+
+a {
+    font-family: 'Bowlby One SC', cursive;
+}
+
+
+
+/* Page d'accueil */
+.horse {
+    position: relative;
+    margin-top: -360px;
+    margin-left: 0%;
+    margin-right: 0%;
+    max-width: 100%;
+    z-index: -5;
+}
+
+.titrePrincipal {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    margin-top: 200px;
+}
+
+
+
+/* Logo */
+.logo {
+    height : 160px;
+    position: absolute;
+    margin-left: 20px;
+    z-index: 1;
 }
