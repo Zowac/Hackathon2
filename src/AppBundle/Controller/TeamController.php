@@ -14,7 +14,14 @@ class TeamController extends Controller
     public function indexAction(Request $request)
     {
         $active = "true";
+        $em = $this->getDoctrine()->getManager();
 
-        return $this->render('equipes/index.html.twig', ['activeEquipes' => $active]);
+        $equipes = $em->getRepository('AppBundle:Equipe')->findAll();
+
+        return $this->render('equipes/index.html.twig', [
+            'activeEquipes' => $active,
+            'equipes' => $equipes
+        ]);
+
     }
 }

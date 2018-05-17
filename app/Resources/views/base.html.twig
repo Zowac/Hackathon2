@@ -6,14 +6,34 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="{{ asset('build/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/general.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Open+Sans" rel="stylesheet">
     </head>
     <body>
         <header>
-            {% block header %}{% endblock %}
+
+            {% block header %}    {% include 'header.html.twig' %}
+            {% endblock %}
         </header>
 
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+
+        {% block javascripts %}
+<script>
+            const bg = document.querySelector('.background-image');
+            const windowWidth = window.innerWidth / 5;
+            const windowHeight = window.innerHeight / 5 ;
+
+            bg.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / windowWidth;
+            const mouseY = e.clientY / windowHeight;
+
+            bg.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
+            });
+</script>
+        {% endblock %}
+
 
         <footer>
             {% block footer %}{% endblock %}

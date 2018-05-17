@@ -10,6 +10,7 @@ class AccueilController extends Controller
 {
     /**
      * @Route("/accueil", name="accueil")
+     * @Route("/", name="")
      */
     public function indexAction(Request $request)
     {
