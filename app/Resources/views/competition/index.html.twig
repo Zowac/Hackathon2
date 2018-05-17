@@ -1,20 +1,195 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% include 'header.html.twig' %}
 
     <div class="container">
-        <h1 class="offset-4">Compétition</h1>
+        <h1>Compétition : </h1>
 
-        <div class="row">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto debitis deserunt dicta distinctio, dolor dolore doloribus earum laudantium molestiae quam qui quisquam reprehenderit rerum sint, ullam. Aspernatur error tempora veniam.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at consequatur culpa debitis delectus deleniti impedit ipsam maxime nam necessitatibus nobis, perspiciatis, porro similique suscipit velit voluptate. Dicta, suscipit!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cumque cupiditate eius eos id, iure magnam molestiae odit optio praesentium quam quia recusandae reiciendis soluta ullam, voluptate, voluptatem voluptates!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores doloribus enim id libero officiis voluptas voluptatem. Aspernatur atque, blanditiis expedita fugiat iusto nobis numquam porro quaerat quis sunt vero!</p>
+        <div class="myProgress">
+            <div class="myBar1"><img src="{{ asset('images/1.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar2"><img src="{{ asset('images/2.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar3"><img src="{{ asset('images/3.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar4"><img src="{{ asset('images/4.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar5"><img src="{{ asset('images/5.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar6"><img src="{{ asset('images/6.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar7"><img src="{{ asset('images/7.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar8"><img src="{{ asset('images/8.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar9"><img src="{{ asset('images/9.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar10"><img src="{{ asset('images/10.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar11"><img src="{{ asset('images/11.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar12"><img src="{{ asset('images/12.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar13"><img src="{{ asset('images/13.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar14"><img src="{{ asset('images/14.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar15"><img src="{{ asset('images/15.png') }}"></div>
+        </div>
+        <hr>
+        <div class="myProgress">
+            <div class="myBar16"><img src="{{ asset('images/16.png') }}"></div>
         </div>
 
+
+        <button onclick="start()">Run</button>
+
     </div>
+    <!-- .container -->
+
+    <script>
+        function start() {
+            for (var i = 1; i <= 16; i++) {
+                move(".myBar".concat(i), i);
+            }
+        }
+        function move(ladiv, inc) {
+            var elem = document.querySelector(ladiv);
+            var width = 0;
+            var increment = inc;
+            var id = setInterval(frame, 500);
+            function frame() {
+                console.log(elem);
+                if (width >= 100) {
+                    if (gagnants == null) {
+                        var gagnants = "1";
+                        console.log(gagnants);
+                    }
+                    clearInterval(id);
+                } else {
+                    console.log(elem);
+                    width += (Math.floor(Math.random() * 800)/ 500);
+                    elem.style.width = width + "%";
+                }
+            }
+        }
+    </script>
 
     {% include 'footer.html.twig' %}
+
+{% endblock %}
+
+{% block stylesheets %}
+
+    <style>
+        /* Reset */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            line-height: 1.5em;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        /* ^_^ */
+        body {
+            background-color: rgb(37, 73, 134);
+            margin-top: 10em;
+        }
+        .container {
+            max-width: 56em;
+            margin: 0 auto;
+            font-family: sans-serif;
+            padding: 0 1em;
+        }
+        h1 {
+            color: #ddd;
+            text-align: center;
+            margin: 1em 0 2em;
+        }
+        .myProgress {
+            width: 100%;
+        //	background-color: rgba(#dddddd, 0);
+        }
+        .myBar1,
+        .myBar2,
+        .myBar3,
+        .myBar4,
+        .myBar5,
+        .myBar6,
+        .myBar7,
+        .myBar8,
+        .myBar9,
+        .myBar10,
+        .myBar11,
+        .myBar12,
+        .myBar13,
+        .myBar14,
+        .myBar15,
+        .myBar16 {
+            width: 0%;
+            height: 1.5em;
+            margin-bottom: 2em;
+            background-color: rgba(#09c777, 0);
+            color: rgba(#254986, 0);
+            padding: 0.3em 0.5em;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: right;
+            transition: 1000ms ease-out;
+        }
+        img {
+            height: 50px;
+        }
+        button {
+            position: relative;
+            padding: 0.3em 1em;
+            font-size: 1em;
+            font-weight: bold;
+            color: #eee;
+            background-color: #333;
+            border-radius: 2px;
+            border: none;
+        }
+        button:hover {
+            color: #eee;
+            background-color: #de3333;
+            cursor: pointer;
+            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+        }
+        button:active {
+            top: -1px;
+        }
+    </style>
 
 {% endblock %}
