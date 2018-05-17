@@ -8,10 +8,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     </head>
     <body>
-    <header>
-        {% block header %}{% endblock %}
-    </header>
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
     </body>
 </html>
