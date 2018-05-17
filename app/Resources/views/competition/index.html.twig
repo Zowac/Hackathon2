@@ -3,75 +3,78 @@
 {% block body %}
 
     <div class="container">
+        <div class="fuck_you">
         <h1>Compétition : </h1>
 
         <div class="myProgress">
-            <div class="myBar1"><img src="{{ asset('images/1.png') }}"></div>
+            <div class="myBar1"><img src="images/1.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar2"><img src="{{ asset('images/2.png') }}"></div>
+            <div class="myBar2"><img src="images/2.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar3"><img src="{{ asset('images/3.png') }}"></div>
+            <div class="myBar3"><img src="images/3.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar4"><img src="{{ asset('images/4.png') }}"></div>
+            <div class="myBar4"><img src="images/4.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar5"><img src="{{ asset('images/5.png') }}"></div>
+            <div class="myBar5"><img src="images/5.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar6"><img src="{{ asset('images/6.png') }}"></div>
+            <div class="myBar6"><img src="images/6.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar7"><img src="{{ asset('images/7.png') }}"></div>
+            <div class="myBar7"><img src="images/7.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar8"><img src="{{ asset('images/8.png') }}"></div>
+            <div class="myBar8"><img src="images/8.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar9"><img src="{{ asset('images/9.png') }}"></div>
+            <div class="myBar9"><img src="images/9.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar10"><img src="{{ asset('images/10.png') }}"></div>
+            <div class="myBar10"><img src="images/10.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar11"><img src="{{ asset('images/11.png') }}"></div>
+            <div class="myBar11"><img src="images/11.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar12"><img src="{{ asset('images/12.png') }}"></div>
+            <div class="myBar12"><img src="images/12.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar13"><img src="{{ asset('images/13.png') }}"></div>
+            <div class="myBar13"><img src="images/13.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar14"><img src="{{ asset('images/14.png') }}"></div>
+            <div class="myBar14"><img src="images/14.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar15"><img src="{{ asset('images/15.png') }}"></div>
+            <div class="myBar15"><img src="images/15.png"></div>
         </div>
         <hr>
         <div class="myProgress">
-            <div class="myBar16"><img src="{{ asset('images/16.png') }}"></div>
+            <div class="myBar16"><img src="images/16.png"></div>
         </div>
 
 
         <button onclick="start()">Run</button>
-
+        <br>
+        <br>
+        </div>
     </div>
     <!-- .container -->
 
@@ -123,14 +126,24 @@
         }
         /* ^_^ */
         body {
-            background-color: rgb(37, 73, 134);
             margin-top: 10em;
+        }
+        hr{
+            background-color: black;
         }
         .container {
             max-width: 56em;
             margin: 0 auto;
             font-family: sans-serif;
             padding: 0 1em;
+        }
+        .fuck_you{
+            position: relative;
+        }
+        .fuck_you:before{
+            content:"";position:absolute;width:100%;height:100%;top:0;left:0;
+            background:url("{{ asset('images/eau.jpg') }}") 0 0 no-repeat;
+            background-size: cover; opacity:.30; z-index: -1;
         }
         h1 {
             color: #ddd;
