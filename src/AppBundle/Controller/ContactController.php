@@ -15,6 +15,6 @@ class ContactController extends Controller
     {
         $active = "true";
 
-        return $this->render('contact/index.html.twig', ['activeContact' => $active]);
+        return $this->render('contact/index.html.twig', ['activeContact' =>$active]);
     }
 }
