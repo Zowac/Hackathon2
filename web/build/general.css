@@ -5,3 +5,7 @@ h1 {
 p {
     font-family: 'Open Sans', sans-serif;
 }
+
+.bg-dark {
+    background-color: #5dc2da !important;
+}
