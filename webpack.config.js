@@ -5,7 +5,6 @@ Encore
     .setPublicPath('/web')
     .autoProvidejQuery()
     .addEntry('app', './assets/js/app.js')
-    // .addEntry('style', './assets/css/style.css')
     .addEntry('style', './assets/scss/main.scss')
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
@@ -13,3 +12,4 @@ Encore
 ;
 
 module.exports = Encore.getWebpackConfig();
+

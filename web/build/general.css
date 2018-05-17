@@ -19,8 +19,14 @@ p {
 
 a {
     font-family: 'Bowlby One SC', cursive;
+    font-size: 24px;
+    color: white;
 }
 
 .navbar {
     z-index : 10 !important;
+}
+
+li {
+    list-style: none;
 }

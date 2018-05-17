@@ -3,17 +3,20 @@
 {% block body %}
 
     <div class="container">
-        <h1 class="offset-4">Résultats :</h1>
+        <h1 class="offset-4">And the winner is...</h1>
 
         <div class="row">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto debitis deserunt dicta distinctio, dolor dolore doloribus earum laudantium molestiae quam qui quisquam reprehenderit rerum sint, ullam. Aspernatur error tempora veniam.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at consequatur culpa debitis delectus deleniti impedit ipsam maxime nam necessitatibus nobis, perspiciatis, porro similique suscipit velit voluptate. Dicta, suscipit!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cumque cupiditate eius eos id, iure magnam molestiae odit optio praesentium quam quia recusandae reiciendis soluta ullam, voluptate, voluptatem voluptates!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores doloribus enim id libero officiis voluptas voluptatem. Aspernatur atque, blanditiis expedita fugiat iusto nobis numquam porro quaerat quis sunt vero!</p>
+            <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
+
 
     </div>
 
-    {% include 'footer.html.twig' %}
+        {% block javascripts %}
+            <script src="{{ asset('build/app.js') }}"></script>
+            <script src="https://code.highcharts.com/highcharts.src.js"></script>
+            <script src="http://code.highcharts.com/modules/exporting.js"></script>
+        {% endblock %}
+        {% include 'footer.html.twig' %}
 
 {% endblock %}
