@@ -9,68 +9,69 @@
 		<div class="firstCourse">
 
 			<div class="myProgress">
-				<div class="myBar1"><img src="images/1.png"></div>
+				<div class="myBar1"><span>test</span><img src="images/1.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
-				<div class="myBar2"><img src="images/2.png"></div>
+				<div class="myBar2"><span>test</span><img src="images/2.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
-				<div class="myBar3"><img src="images/3.png"></div>
+				<div class="myBar3"><span>test</span><img src="images/3.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
-				<div class="myBar4"><img src="images/4.png"></div>
+				<div class="myBar4"><span>test</span><img src="images/4.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar5"><img src="images/5.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar6"><img src="images/6.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar7"><img src="images/7.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar8"><img src="images/8.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar9"><img src="images/9.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar10"><img src="images/10.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar11"><img src="images/11.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar12"><img src="images/12.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar13"><img src="images/13.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar14"><img src="images/14.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar15"><img src="images/15.png"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar16"><img src="images/16.png"></div>
 			</div>
+
 
 		</div>
 
@@ -79,31 +80,31 @@
 			<div class="myProgress">
 				<div class="myBar17"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar18"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar19"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar20"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar21"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar22"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar23"></div>
 			</div>
-			<hr>
+
 			<div class="myProgress">
 				<div class="myBar24"></div>
 			</div>
@@ -111,19 +112,23 @@
 		</div>
 		<div class="thirdCourse">
 			<div class="myProgress">
-				<div class="myBar25"><img src="images/8.png"></div>
+				<div class="myBar25"></div>
 			</div>
+
 			<div class="myProgress">
-				<div class="myBar26"><img src="images/8.png"></div>
+				<div class="myBar26"></div>
 			</div>
+
 			<div class="myProgress">
-				<div class="myBar27"><img src="images/8.png"></div>
+				<div class="myBar27"></div>
 			</div>
+
 			<div class="myProgress">
-				<div class="myBar28"><img src="images/8.png"></div>
+				<div class="myBar28"></div>
 			</div>
+
 			<div class="myProgress">
-				<div class="myBar29"><img src="images/8.png"></div>
+				<div class="myBar29"></div>
 			</div>
 
 		</div>
@@ -173,8 +178,15 @@
 				if (participants.length == 15) {
 					idpar = 0;
 
+
+          for (var i = 1; i <= 18; i++) {
+            if(gagnants.includes(i) == true ){
+            document.querySelector(".myBar".concat(i)).innerHTML = "";
+            }
+
+          }
 					for (var i = 17; i <= 24; i++) {
-						document.querySelector(".myBar".concat(i)).innerHTML = "<img src='images/".concat(gagnants[idpar]).concat(".png'>")
+						document.querySelector(".myBar".concat(i)).innerHTML = "<span>test</span><img src='images/".concat(gagnants[idpar]).concat(".png'>")
 						idpar += 1;
 					}
 				}
@@ -207,6 +219,12 @@
         if (participants.length == 23) {
           idpar = 8;
 
+          for (var i = 17; i <= 24; i++) {
+            if( gagnants.includes(i) == true ){
+            document.querySelector(".myBar".concat(i)).innerHTML = "";
+            }
+
+          }
           for (var i = 25; i <= 29; i++) {
             document.querySelector(".myBar".concat(i)).innerHTML = "<img src='images/".concat(gagnants[idpar]).concat(".png'>")
             idpar += 1;
@@ -278,7 +296,7 @@
 		}
 		/* ^_^ */
 		body {
-			background-color: rgb(37, 73, 134);
+		  background-image:url(images/eau.jpg);
 			margin-top: 10em;
 		}
 		.container {
@@ -287,6 +305,9 @@
 			font-family: sans-serif;
 			padding: 0 1em;
 		}
+    span{
+      
+    }
 		h1 {
 			color: #ddd;
 			text-align: center;
@@ -294,7 +315,7 @@
 		}
 		.myProgress {
 			width: 100%;
-			background-color: #dddddd;
+
 		}
 		.myBar1,
 		.myBar10,
@@ -329,8 +350,8 @@
 		.myBar9 {
 			width: 0;
 			height: 1em;
-			margin-bottom: 1.5em;
-			background-color: #00ff29;
+			margin-bottom: 2.5em;
+
 			color: rgba(#254986, 0);
 			padding: 0.3em 0.5em;
 			font-size: 1.1em;
@@ -360,6 +381,11 @@
 		button:active {
 			top: -1px;
 		}
+
+    hr{
+      color:red;
+      background-color: red;
+    }
 
 		.firstCourse {
 			width: 30%;
