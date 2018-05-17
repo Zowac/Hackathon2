@@ -6,15 +6,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class ContactController extends Controller
+class ResultatController extends Controller
 {
     /**
-     * @Route("/contact", name="contact")
+     * @Route("/resultats", name="resultats")
      */
     public function indexAction(Request $request)
     {
         $active = "true";
 
-        return $this->render('contact/index.html.twig', ['activeContact' =>$active]);
+        return $this->render('resultats/index.html.twig', ['activeResultat' => $active]);
     }
 }
