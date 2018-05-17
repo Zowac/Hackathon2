@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Equipes list : </h1>
+    <h1 class="titrePrincipal">Equipes list : </h1>
     <br>
     <br>
 
@@ -44,4 +44,18 @@
             <a href="{{ path('equipe_new') }}">Create a new equipe</a>
         </li>
     </ul>
+{% endblock %}
+
+{% block stylesheets %}
+
+    <style>
+
+        .titrePrincipal {
+            font-family: 'Bowlby One SC', cursive;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+
 {% endblock %}

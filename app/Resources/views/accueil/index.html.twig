@@ -1,19 +1,66 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block body  %}
 
-    <div class="container">
+    <section id="accueil">
+        <div class="container-fluid">
 
-        <div class="row">
-            <h1 class="offset-4">AquaHippique</h1>
-            <p class="offset-3">Voici la plus grand compétition d'Aqua Poney du Bas-Rhin !</p>
+            <img class="logo" src="{{ asset('images/AquaHippique.png') }}" alt="logo"/>
+            <h1 class="titrePrincipal">La Première compétition de courses <br>d'aqua poney</h1>
+            <div class="background-image"></div>
+
         </div>
+    </section>
 
-        <div class="row">
-            <p></p>
-        </div>
 
-    </div>
+{% endblock %}
 
-    {% include 'footer.html.twig' %}
+{% block stylesheets %}
+<style>
+    /* Logo */
+    .logo {
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 9;
+        color: white;
+        position: absolute;
+        top: 60%;
+        width: 210px;
+        left: 18%;
+        transform: translate3d(-50%,-50%,0);
+    }
+
+    .background-image {
+        width: 110%;
+        height: 110%;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        position: absolute;
+        background: url('http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526571976/horse_xgaajl.png') no-repeat left center / cover;
+    }
+
+    .titrePrincipal {
+        font-family: 'Bowlby One SC', cursive;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 9;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate3d(-50%,-50%,0);
+    }
+
+    html, body {
+        min-height: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+</style>
 {% endblock %}

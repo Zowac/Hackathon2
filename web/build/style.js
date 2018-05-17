@@ -60,15 +60,15 @@
 /******/ 	__webpack_require__.p = "/web/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/scss/main.scss");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/css/general.css");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/scss/main.scss":
-/*!*******************************!*\
-  !*** ./assets/scss/main.scss ***!
-  \*******************************/
+/***/ "./assets/css/general.css":
+/*!********************************!*\
+  !*** ./assets/css/general.css ***!
+  \********************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports) {

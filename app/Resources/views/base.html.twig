@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}AquaHippique{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="{{ asset('build/style.css') }}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('build/general.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Open+Sans" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -16,7 +18,23 @@
         </header>
 
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+
+        {% block javascripts %}
+<script>
+            const bg = document.querySelector('.background-image');
+            const windowWidth = window.innerWidth / 5;
+            const windowHeight = window.innerHeight / 5 ;
+
+            bg.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / windowWidth;
+            const mouseY = e.clientY / windowHeight;
+
+            bg.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
+            });
+</script>
+        {% endblock %}
+
 
         <footer>
             {% block footer %}{% endblock %}

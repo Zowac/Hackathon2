@@ -1,33 +1,23 @@
 {% block header %}
 
-
-    <footer class="jumbotron" style="">
-
-        <p class="footer">Site crée par Hasan, Tiffany, Xavier, Aurélien avec un peu d'aide de Kevin (mais très peu)</p>
-        <p></p>
-
+    <footer>
+        <img style="width: 140px; margin-top: 20px;" src="{{ asset('images/AquaHippique.png') }}" alt="logoFooter" />
+        <p>Site crée par Kévin avec un peu (vraiment peu) d'aide d'Hasan, de Tiffany, de Xavier et d'Aurélien</p>
     </footer>
-
-
 
 {% endblock %}
 
-{% block stylesheets %}
 
+{% block stylesheets %}
     <style>
 
-        .jumbotron{
-            background-color: darkslategray;
-            border-radius: 0px;
-            height: 100px;
-            width: 100%;
-        }
-
-        .footer{
-            width: 100%;
-            color : white;
+        footer {
+            height : 80px;
+            text-align: center;
+            bottom: 0;
+            font-size: 12px;
+            background-color: #5e5e5e;
         }
 
     </style>
-
 {% endblock %}
