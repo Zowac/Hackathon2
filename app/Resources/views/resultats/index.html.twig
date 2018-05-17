@@ -3,7 +3,7 @@
 {% block body %}
 
     <div class="container">
-        <h1 class="offset-4">And the winner is...</h1>
+        <h1 class="titrePrincipal">And the winner is...</h1>
 
         <div class="row">
             <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
@@ -18,5 +18,19 @@
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
         {% endblock %}
         {% include 'footer.html.twig' %}
+
+{% endblock %}
+
+{% block stylesheets %}
+
+    <style>
+
+        .titrePrincipal {
+            font-family: 'Bowlby One SC', cursive;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
 
 {% endblock %}

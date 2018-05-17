@@ -3,7 +3,7 @@
 {% block body %}
 
     <div class="container">
-        <h1 class="offset-4">Contact</h1>
+        <h1 class="titrePrincipal">Contact</h1>
     </div>
 
     <section class="row">
@@ -39,5 +39,19 @@
     </section>
 
     {% include 'footer.html.twig' %}
+
+{% endblock %}
+
+{% block stylesheets %}
+
+    <style>
+
+        .titrePrincipal {
+            font-family: 'Bowlby One SC', cursive;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
 
 {% endblock %}

@@ -4,9 +4,8 @@
 
     <div class="container">
 
-        <div class="row">
-            <h1 class="offset-4">Equipes list : </h1>
-        </div>
+            <h1 class="titrePrincipal">Equipes list : </h1>
+
         <br>
         <br>
 
@@ -34,4 +33,18 @@
     </div>
 
     {% include 'footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+
+    <style>
+
+        .titrePrincipal {
+            font-family: 'Bowlby One SC', cursive;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+
 {% endblock %}
