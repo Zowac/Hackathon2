@@ -15,6 +15,9 @@ class CompetitionController extends Controller
     {
         $active = "true";
 
-        return $this->render('competition/index.html.twig', ['activeCompetition' => $active]);
+        $em = $this->getDoctrine()->getManager();
+        $equipes = $em->getRepository('AppBundle:Equipe')->findAll();
+
+        return $this->render('competition/index.html.twig', ['activeCompetition' => $active, 'equipes' => $equipes]);
     }
 }

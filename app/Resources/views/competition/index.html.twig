@@ -8,77 +8,22 @@
 
 		<div class="firstCourse">
 
-			<div class="myProgress">
-				<div class="myBar1">
-					<span>test</span><img src="images/1.png"></div>
-			</div>
 
-			<div class="myProgress">
-				<div class="myBar2">
-					<span>test</span><img src="images/2.png"></div>
-			</div>
 
-			<div class="myProgress">
-				<div class="myBar3">
-					<span>test</span><img src="images/3.png"></div>
-			</div>
+					{% for i,equipe in equipes %}
+					{% set i = i +1 %}
 
-			<div class="myProgress">
-				<div class="myBar4">
-					<span>test</span><img src="images/4.png"></div>
-			</div>
+						<div class="myProgress">
+					<div class="myBar{{ i  }}">
+						<span>Poney {{ equipe.poney}} avec {{ equipe.cavalier }} de {{ equipe.village }}</span><img src="images/{{ equipe.image }}"></div>
+				</div>
 
-			<div class="myProgress">
-				<div class="myBar5"><img src="images/5.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar6"><img src="images/6.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar7"><img src="images/7.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar8"><img src="images/8.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar9"><img src="images/9.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar10"><img src="images/10.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar11"><img src="images/11.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar12"><img src="images/12.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar13"><img src="images/13.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar14"><img src="images/14.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar15"><img src="images/15.png"></div>
-			</div>
-
-			<div class="myProgress">
-				<div class="myBar16"><img src="images/16.png"></div>
-			</div>
+					{% endfor %}
 
 		</div>
 
 		<div class="secondCourse">
+
 
 			<div class="myProgress">
 				<div class="myBar17"></div>
@@ -136,7 +81,7 @@
 
 		</div>
 
-		<button onclick="start()">Run</button>
+		<button onclick="start()">Voir la course</button>
 
 	</div>
 	<!-- .container -->
@@ -172,6 +117,28 @@
 					move3(".myBar".concat(i), player);
 						player += 1
 				}
+			}else if ( gagnants3.length == 3 && course == 3){
+					var gagnantsFinal = 1;
+				for (var i = 17; i <= 18; i++) {
+					document.querySelector(".myBar".concat(i)).innerHTML = "<img src='http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526633517/third_xcmjnv.png'></img><img src='images/".concat(gagnants3[2]).concat(".png'>")
+
+				}
+
+				for (var i = 19; i <= 21; i++) {
+					document.querySelector(".myBar".concat(i)).innerHTML ="<img src='http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526633517/second_qcspma.png'></img><img src='images/".concat(gagnants3[1]).concat(".png'>")
+				//	document.querySelector(".myBar".concat(i)).style.width: 50 + '%'
+
+				}
+				for (var i = 22; i <= 25; i++) {
+					document.querySelector(".myBar".concat(i)).innerHTML = "<img ".concat().concat(".png'>")
+
+				}
+
+				for (var i = 25; i <= 29; i++) {
+					document.querySelector(".myBar".concat(i)).innerHTML = "<img src='http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526633517/first_ymlpka.png'><img src='images/".concat(gagnants3[0]).concat(".png'>")
+
+				}
+
 			}
 
 			function move(ladiv, inc) {
@@ -194,7 +161,7 @@
 
 						} */
 						for (var i = 17; i <= 24; i++) {
-							document.querySelector(".myBar".concat(i)).innerHTML = "<span>test</span><img src='images/".concat(gagnants[idpar]).concat(".png'>")
+							document.querySelector(".myBar".concat(i)).innerHTML = "<img src='images/".concat(gagnants[idpar]).concat(".png'>")
 							idpar += 1;
 						}
 					}
@@ -208,7 +175,7 @@
 
 						clearInterval(id);
 					} else {
-						width += (Math.floor(Math.random() * 1000)/ 50);
+						width += (Math.floor(Math.random() * 1000) / 500);
 						elem.style.width = width + "%";
 					}
 				}
@@ -245,6 +212,7 @@
 						console.log(gagnants);
 						for (var i = 25; i <= 29; i++) {
 							document.querySelector(".myBar".concat(i)).innerHTML = "<img src='images/".concat(gagnants2[idpar]).concat(".png'>")
+								document.querySelector(".myBar".concat(i))
 							idpar += 1;
 						}
 					}
@@ -258,7 +226,7 @@
 
 						clearInterval(id);
 					} else {
-						width += (Math.floor(Math.random() * 1000)/ 50);
+						width += (Math.floor(Math.random() * 1000) / 600);
 						elem.style.width = width + "%";
 					}
 				}
@@ -280,13 +248,15 @@
 						participants2.push(increment);
 						clearInterval(id);
 					} else {
-						width += (Math.floor(Math.random() * 1000)/ 50);
+						width += (Math.floor(Math.random() * 1000) / 800);
 						elem.style.width = width + "%";
 					}
 				}
 
 			}
 		}
+
+
 	</script>
 
 
@@ -305,10 +275,12 @@
 			line-height: 1.5em;
 			text-decoration: none;
 			box-sizing: border-box;
+
 		}
 		/* ^_^ */
 		body {
-			background-image: url("images/eau.jpg");
+			background-color: #9fedff !important ;
+
 			margin-top: 10em;
 		}
 		.container {
@@ -318,6 +290,7 @@
 			padding: 0 1em;
 		}
 		span {
+			font-size: 1.4em;
 			}
 		h1 {
 			color: #ddd;
@@ -426,4 +399,19 @@
 		}
 	</style>
 
+{% endblock %}
+
+{% block javascripts %}
+<script>
+		const bg = document.querySelector('.background-image');
+		const windowWidth = window.innerWidth / 5;
+		const windowHeight = window.innerHeight / 5 ;
+
+		bg.addEventListener('mousemove', (e) => {
+		const mouseX = e.clientX / windowWidth;
+		const mouseY = e.clientY / windowHeight;
+
+		bg.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
+		});
+</script>
 {% endblock %}
