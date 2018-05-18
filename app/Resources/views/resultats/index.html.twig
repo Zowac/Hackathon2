@@ -7,32 +7,41 @@
 
         <br>
 
-    <table class="table table-striped table-bordered table-sm">
-        <thead class="thead-dark">
-        <tr>
-            <th style="vertical-align:middle">VILLAGE</th>
-            <th style="vertical-align:middle">PONEY</th>
-            <th style="vertical-align:middle">CAVALIER</th>
-            <th style="vertical-align:middle"><img style="width:60px" src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526633517/first_ymlpka.png" alt=""></th>
-            <th style="vertical-align:middle"><img style="width:60px" src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526633517/second_qcspma.png" alt=""></th>
-            <th style="vertical-align:middle"><img style="width:60px" src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526633517/third_xcmjnv.png" alt=""></th>
-            <th style="vertical-align:middle">TOTAL</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for equipe in equipes %}
+        <table class="table table-striped table-bordered table-sm">
+            <thead class="thead-dark">
             <tr>
-                <td style="vertical-align:middle">{{ equipe.village }}</td>
-                <td style="vertical-align:middle">{{ equipe.poney }} <img style="width:100px" class="pony" src="{{ asset('images/'~equipe.image) }}" alt=""></td>
-                <td style="vertical-align:middle">{{ equipe.cavalier }}</td>
-                <td style="vertical-align:middle; width: 100px;">{{ equipe.medailleOr }}</td>
-                <td style="vertical-align:middle; width: 100px;">{{ equipe.medailleArgent }}</td>
-                <td style="vertical-align:middle; width: 100px;">{{ equipe.medailleBronze }}</td>
-                <td style="vertical-align:middle; width: 100px;">{{ equipe.totalMedailles }}</td>
+                <th style="vertical-align:middle">VILLAGE</th>
+                <th style="vertical-align:middle">PONEY</th>
+                <th style="vertical-align:middle">CAVALIER</th>
+                <th style="vertical-align:middle"><img style="width:60px"
+                                                       src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526633517/first_ymlpka.png"
+                                                       alt=""></th>
+                <th style="vertical-align:middle"><img style="width:60px"
+                                                       src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526633517/second_qcspma.png"
+                                                       alt=""></th>
+                <th style="vertical-align:middle"><img style="width:60px"
+                                                       src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1526633517/third_xcmjnv.png"
+                                                       alt=""></th>
+                <th style="vertical-align:middle">TOTAL</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for equipe in equipes %}
+                <tr>
+                    <td style="vertical-align:middle">{{ equipe.village }}</td>
+                    <td style="vertical-align:middle">{{ equipe.poney }} <img style="width:100px" class="pony"
+                                                                              src="{{ asset('images/'~equipe.image) }}"
+                                                                              alt=""></td>
+                    <td style="vertical-align:middle">{{ equipe.cavalier }}</td>
+                    <td style="vertical-align:middle; width: 100px;">{{ equipe.medailleOr }}</td>
+                    <td style="vertical-align:middle; width: 100px;">{{ equipe.medailleArgent }}</td>
+                    <td style="vertical-align:middle; width: 100px;">{{ equipe.medailleBronze }}</td>
+                    <td style="vertical-align:middle; width: 100px;">{{ equipe.totalMedailles }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
     {% include 'footer.html.twig' %}
 
@@ -48,8 +57,8 @@
             margin-top: 20px;
         }
 
-        tr{
-        text-align: center;
+        tr {
+            text-align: center;
         }
 
     </style>
