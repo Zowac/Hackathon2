@@ -13,7 +13,7 @@ class EquipeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('village')->add('poney')->add('cavalier')->add('image');
+        $builder->add('village')->add('poney')->add('cavalier')->add('image')->add('medailleOr')->add('medailleArgent')->add('medailleBronze')->add('totalMedailles');
     }/**
      * {@inheritdoc}
      */

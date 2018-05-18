@@ -4,7 +4,7 @@
 
     <div class="container">
 
-            <h1 class="titrePrincipal">Equipes list : </h1>
+            <h1 class="titrePrincipal">Liste des équipes</h1>
 
         <br>
         <br>
@@ -14,8 +14,8 @@
             <tr>
                 <th>Village</th>
                 <th>Poney</th>
+                <th>Photo</th>
                 <th>Cavalier</th>
-                <th>Image</th>
             </tr>
             </thead>
             <tbody>
@@ -23,9 +23,11 @@
                 <tr>
                     <td>{{ equipe.village }}</td>
                     <td>{{ equipe.poney }}</td>
-                    <td>{{ equipe.cavalier }}</td>
                     <td><img style="width:100px" class="pony" src="{{ asset('images/'~equipe.image) }}" alt=""></td>
+                    <td>{{ equipe.cavalier }}</td>
                 </tr>
+
+
             {% endfor %}
             </tbody>
         </table>
@@ -43,6 +45,10 @@
             font-family: 'Bowlby One SC', cursive;
             text-align: center;
             margin-top: 20px;
+        }
+
+        tr{
+            text-align: center;
         }
 
     </style>

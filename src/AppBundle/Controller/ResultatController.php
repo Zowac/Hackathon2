@@ -14,7 +14,13 @@ class ResultatController extends Controller
     public function indexAction(Request $request)
     {
         $active = "true";
+        $em = $this->getDoctrine()->getManager();
 
-        return $this->render('resultats/index.html.twig', ['activeResultat' => $active]);
+        $equipes = $em->getRepository('AppBundle:Equipe')->findAll();
+
+        return $this->render('resultats/index.html.twig', [
+            'activeEquipes' => $active,
+            'equipes' => $equipes
+        ]);
     }
 }

@@ -1,9 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="titrePrincipal">Equipes list : </h1>
-    <br>
-    <br>
+    <h1 class="titrePrincipal">Liste des équipes</h1>
 
     <table class="table table-striped table-bordered table-sm">
         <thead class="thead-dark">
@@ -13,6 +11,10 @@
                 <th>Poney</th>
                 <th>Cavalier</th>
                 <th>Image</th>
+                <th>Médailles d'or</th>
+                <th>Médailles d'argent</th>
+                <th>Médailles de bronz</th>
+                <th>Total de médailles</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -24,6 +26,10 @@
                 <td>{{ equipe.poney }}</td>
                 <td>{{ equipe.cavalier }}</td>
                 <td>{{ equipe.image }}</td>
+                <td>{{ equipe.medailleOr }}</td>
+                <td>{{ equipe.medailleArgent }}</td>
+                <td>{{ equipe.medailleBronze }}</td>
+                <td>{{ equipe.totalMedailles }}</td>
                 <td>
                     <ul>
                         <li>
@@ -41,21 +47,21 @@
 
     <ul>
         <li>
-            <a href="{{ path('equipe_new') }}">Create a new equipe</a>
+            <a href="{{ path('equipe_new') }}">Ajouter une équipe</a>
         </li>
     </ul>
 {% endblock %}
 
 {% block stylesheets %}
 
-    <style>
+<style>
 
-        .titrePrincipal {
-            font-family: 'Bowlby One SC', cursive;
-            text-align: center;
-            margin-top: 20px;
-        }
+    .titrePrincipal {
+        font-family: 'Bowlby One SC';
+        text-align: center;
+        margin-top: 20px;
+    }
 
-    </style>
+</style>
 
 {% endblock %}
