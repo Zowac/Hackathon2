@@ -8,3 +8,25 @@ h1 {
 p {
     font-family: 'Open Sans', sans-serif;
 }
+
+
+
+/* ------------------- Barre de navigation ------------------- */
+
+.bg-dark {
+    background-color: #5dc2da !important;
+}
+
+a {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 24px;
+    color: white;
+}
+
+.navbar {
+    z-index : 10 !important;
+}
+
+li {
+    list-style: none;
+}
