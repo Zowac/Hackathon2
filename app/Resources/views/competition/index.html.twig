@@ -9,19 +9,23 @@
 		<div class="firstCourse">
 
 			<div class="myProgress">
-				<div class="myBar1"><span>test</span><img src="images/1.png"></div>
+				<div class="myBar1">
+					<span>test</span><img src="images/1.png"></div>
 			</div>
 
 			<div class="myProgress">
-				<div class="myBar2"><span>test</span><img src="images/2.png"></div>
+				<div class="myBar2">
+					<span>test</span><img src="images/2.png"></div>
 			</div>
 
 			<div class="myProgress">
-				<div class="myBar3"><span>test</span><img src="images/3.png"></div>
+				<div class="myBar3">
+					<span>test</span><img src="images/3.png"></div>
 			</div>
 
 			<div class="myProgress">
-				<div class="myBar4"><span>test</span><img src="images/4.png"></div>
+				<div class="myBar4">
+					<span>test</span><img src="images/4.png"></div>
 			</div>
 
 			<div class="myProgress">
@@ -71,7 +75,6 @@
 			<div class="myProgress">
 				<div class="myBar16"><img src="images/16.png"></div>
 			</div>
-
 
 		</div>
 
@@ -142,6 +145,10 @@
 		var course = 0;
 		var gagnants = [];
 		var participants = [];
+		var gagnants2 = [];
+		var participants2 = [];
+		var gagnants3 = [];
+
 
 		function start() {
 
@@ -156,127 +163,132 @@
 				for (var i = 17; i <= 24; i++) {
 
 					move2(".myBar".concat(i), player);
-          player += 1
+					player += 1
 				}
-			} else if (participants.length == 24 && course == 2) {
-				player = 9;
+			} else if (participants2.length == 8 && course == 2) {
+				player = 0;
 				course += 1;
 				for (var i = 25; i <= 29; i++) {
 					move3(".myBar".concat(i), player);
+						player += 1
 				}
 			}
 
+			function move(ladiv, inc) {
+				var elem = document.querySelector(ladiv);
+				var width = 0;
+				var increment = inc;
 
-		function move(ladiv, inc) {
-			var elem = document.querySelector(ladiv);
-			var width = 0;
-			var increment = inc;
+				var id = setInterval(frame, 100);
+				function frame() {
+					console.log(participants);
+					console.log(gagnants);
+					if (participants.length == 15) {
+						idpar = 0;
 
-			var id = setInterval(frame, 100);
-			function frame() {
-            console.log(gagnants);
-				if (participants.length == 15) {
-					idpar = 0;
+					/*		for (var i = 1; i <= 16; i++) {
 
+						if (gagnants.includes(i) == true) {
+								document.querySelector(".myBar".concat(i)).innerHTML = "";
+							}
 
-          for (var i = 1; i <= 18; i++) {
-            if(gagnants.includes(i) == true ){
-            document.querySelector(".myBar".concat(i)).innerHTML = "";
-            }
+						} */
+						for (var i = 17; i <= 24; i++) {
+							document.querySelector(".myBar".concat(i)).innerHTML = "<span>test</span><img src='images/".concat(gagnants[idpar]).concat(".png'>")
+							idpar += 1;
+						}
+					}
 
-          }
-					for (var i = 17; i <= 24; i++) {
-						document.querySelector(".myBar".concat(i)).innerHTML = "<span>test</span><img src='images/".concat(gagnants[idpar]).concat(".png'>")
-						idpar += 1;
+					if (width >= 100) {
+						if (gagnants.length < 8) {
+							gagnants.push(increment);
+						}
+
+						participants.push(increment);
+
+						clearInterval(id);
+					} else {
+						width += (Math.floor(Math.random() * 1000)/ 50);
+						elem.style.width = width + "%";
 					}
 				}
 
-				if (width >= 100) {
-					if (gagnants.length < 8) {
-						gagnants.push(increment);
-					}
-
-					participants.push(increment);
-
-					clearInterval(id);
-				} else {
-					width += (Math.floor(Math.random() * 100) / 20);
-					elem.style.width = width + "%";
-				}
 			}
 
+			function move2(ladiv, inc) {
+				var elem = document.querySelector(ladiv);
+				var width = 0;
+				var increment = inc;
+				var id = setInterval(frame, 100);
+
+				function frame() {
+					console.log(participants2);
+					console.log(gagnants2);
+
+					if (participants2.length == 7) {
+						idpar = 0;
+						idpar2 = 0;
+
+						if (gagnants.length == 13) {
+							gagnants.splice(0, 8);
+						}
+
+						for (var i = 17; i <= 24; i++) {
+							console.log(idpar2);
+				/**			if (gagnants2.includes(participants2[idpar2]) == true) {
+								document.querySelector(".myBar".concat(i)).innerHTML = "";
+
+							}*/
+							idpar2 += 1;
+
+						}
+						console.log(gagnants);
+						for (var i = 25; i <= 29; i++) {
+							document.querySelector(".myBar".concat(i)).innerHTML = "<img src='images/".concat(gagnants2[idpar]).concat(".png'>")
+							idpar += 1;
+						}
+					}
+
+					if (width >= 100) {
+						if (gagnants2.length < 5) {
+							gagnants2.push(gagnants[increment]);
+						}
+
+						participants2.push(gagnants[increment]);
+
+						clearInterval(id);
+					} else {
+						width += (Math.floor(Math.random() * 1000)/ 50);
+						elem.style.width = width + "%";
+					}
+				}
+
+			}
+			function move3(ladiv, inc) {
+				var elem = document.querySelector(ladiv);
+				var width = 0;
+				var increment = inc;
+				var id = setInterval(frame, 100);
+				function frame() {
+
+					if (width >= 100) {
+
+						if (gagnants3.length < 3) {
+							gagnants3.push(gagnants2[increment]);
+							console.log(gagnants3);
+						}
+						participants2.push(increment);
+						clearInterval(id);
+					} else {
+						width += (Math.floor(Math.random() * 1000)/ 50);
+						elem.style.width = width + "%";
+					}
+				}
+
+			}
 		}
-
-    function move2(ladiv, inc) {
-      var elem = document.querySelector(ladiv);
-      var width = 0;
-      var increment = inc;
-      var id = setInterval(frame, 100);
-
-      function frame() {
-        console.log(gagnants);
-
-        if (participants.length == 23) {
-          idpar = 8;
-
-          for (var i = 17; i <= 24; i++) {
-            if( gagnants.includes(i) == true ){
-            document.querySelector(".myBar".concat(i)).innerHTML = "";
-            }
-
-          }
-          for (var i = 25; i <= 29; i++) {
-            document.querySelector(".myBar".concat(i)).innerHTML = "<img src='images/".concat(gagnants[idpar]).concat(".png'>")
-            idpar += 1;
-          }
-        }
-
-        if (width >= 100) {
-          if (gagnants.length < 13) {
-            gagnants.push(gagnants[increment]);
-          }
-
-          participants.push(increment);
-
-          clearInterval(id);
-        } else {
-          width += (Math.floor(Math.random() * 100) / 20);
-          elem.style.width = width + "%";
-        }
-      }
-
-    }
-		function move3(ladiv, inc) {
-			var elem = document.querySelector(ladiv);
-			var width = 0;
-			var increment = inc;
-			var id = setInterval(frame, 100);
-			function frame() {
-
-				if (width >= 100) {
-
-					if (gagnants.length < 12) {
-						gagnants.push(gagnants[increment]);
-					}
-					participants.push(increment);
-					clearInterval(id);
-				} else {
-					width += (Math.floor(Math.random() * 100) / 20);
-					elem.style.width = width + "%";
-				}
-			}
-
-		}
-	}
 	</script>
-	<button onclick="myFunction()">Remove selected fruit</button>
-	<script>
 
-		function myFunction() {
-			var x = document.querySelector(".myBar1");
-			x.remove(x.selectedIndex);
-		}
-	</script>
 
 {% endblock %}
 
@@ -296,7 +308,7 @@
 		}
 		/* ^_^ */
 		body {
-		  background-image:url(images/eau.jpg);
+			background-image: url("images/eau.jpg");
 			margin-top: 10em;
 		}
 		.container {
@@ -305,14 +317,12 @@
 			font-family: sans-serif;
 			padding: 0 1em;
 		}
-    span{
-      
-    }
+		span {
+			}
 		h1 {
 			color: #ddd;
 			text-align: center;
 			margin: 1em 0 2em;
-
 		}
 		.myProgress {
 			width: 100%;
@@ -360,7 +370,7 @@
 			text-align: right;
 			transition: 100ms ease-out;
 		}
-		div>img {
+		img {
 			height: 50px;
 		}
 		button {
@@ -383,107 +393,15 @@
 			top: -1px;
 		}
 
-    hr{
-      color:red;
-      background-color: red;
-    }
+		hr {
+			color: red;
+			background-color: red;
+		}
 
 		.firstCourse {
 			width: 30%;
 			float: left;
 		}
-
-
-        /* Reset */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            line-height: 1.5em;
-            text-decoration: none;
-            box-sizing: border-box;
-        }
-        /* ^_^ */
-        body {
-            margin-top: 10em;
-        }
-        hr{
-            background-color: black;
-        }
-        .container {
-            max-width: 56em;
-            margin: 0 auto;
-            font-family: sans-serif;
-            padding: 0 1em;
-        }
-        .fuck_you{
-            position: relative;
-        }
-        .fuck_you:before{
-            content:"";position:absolute;width:100%;height:100%;top:0;left:0;
-            background:url("{{ asset('images/eau.jpg') }}") 0 0 no-repeat;
-            background-size: cover; opacity:.30; z-index: -1;
-        }
-        h1 {
-            color: #ddd;
-            text-align: center;
-            margin: 1em 0 2em;
-        }
-        .myProgress {
-            width: 100%;
-        //	background-color: rgba(#dddddd, 0);
-        }
-        .myBar1,
-        .myBar2,
-        .myBar3,
-        .myBar4,
-        .myBar5,
-        .myBar6,
-        .myBar7,
-        .myBar8,
-        .myBar9,
-        .myBar10,
-        .myBar11,
-        .myBar12,
-        .myBar13,
-        .myBar14,
-        .myBar15,
-        .myBar16 {
-            width: 0%;
-            height: 1.5em;
-            margin-bottom: 2em;
-            background-color: rgba(#09c777, 0);
-            color: rgba(#254986, 0);
-            padding: 0.3em 0.5em;
-            font-size: 1.1em;
-            font-weight: bold;
-            text-align: right;
-            transition: 1000ms ease-out;
-        }
-        div>img {
-            height: 50px;
-        }
-        button {
-            position: relative;
-            padding: 0.3em 1em;
-            font-size: 1em;
-            font-weight: bold;
-            color: #eee;
-            background-color: #333;
-            border-radius: 2px;
-            border: none;
-        }
-        button:hover {
-            color: #eee;
-            background-color: #de3333;
-            cursor: pointer;
-            box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
-        }
-        button:active {
-            top: -1px;
-
 
 		.secondCourse {
 			margin-top: 10%;
@@ -507,6 +425,5 @@
 			float: left;
 		}
 	</style>
-
 
 {% endblock %}
