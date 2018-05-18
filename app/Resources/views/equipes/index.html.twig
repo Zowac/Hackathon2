@@ -14,17 +14,17 @@
             <tr>
                 <th>VILLAGE</th>
                 <th>PONEY</th>
-                <th>CAVALIER</th>
                 <th>IMAGE</th>
+                <th>CAVALIER</th>
             </tr>
             </thead>
             <tbody>
             {% for equipe in equipes %}
                 <tr>
-                    <td>{{ equipe.village }}</td>
-                    <td>{{ equipe.poney }}</td>
-                    <td>{{ equipe.cavalier }}</td>
-                    <td><img style="width:100px" class="pony" src="{{ asset('images/'~equipe.image) }}" alt=""></td>
+                    <td style="vertical-align:middle">{{ equipe.village }}</td>
+                    <td style="vertical-align:middle">{{ equipe.poney }}</td>
+                    <td style="vertical-align:middle"><img style="width:100px" class="pony" src="{{ asset('images/'~equipe.image) }}" alt=""></td>
+                    <td style="vertical-align:middle">{{ equipe.cavalier }}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -46,7 +46,8 @@
             margin-top: 20px;
         }
 
-        tr { text-align: center; }
+        tr { text-align: center; font-size: 18px }
+
 
     </style>
 
