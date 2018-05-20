@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: 192.168.8.132
+    database_host: 192.168.1.45
     database_port: null
     database_name: hackathon2
     database_user: root
